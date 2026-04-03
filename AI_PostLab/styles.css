@@ -1,0 +1,155 @@
+:root {
+  --bg: #f6f7fb;
+  --panel: #ffffff;
+  --ink: #1c1c1c;
+  --muted: #6e6e6e;
+  --accent: #2d8cff;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, sans-serif;
+  background: var(--bg);
+  color: var(--ink);
+}
+
+.wrap {
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
+  gap: 24px;
+  padding: 24px;
+}
+
+.robot {
+  display: grid;
+  place-items: center;
+  gap: 8px;
+}
+
+.antenna {
+  width: 6px;
+  height: 30px;
+  background: var(--ink);
+  border-radius: 999px;
+  position: relative;
+}
+
+.antenna::after {
+  content: "";
+  position: absolute;
+  top: -12px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 14px;
+  height: 14px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.head {
+  width: 120px;
+  height: 90px;
+  background: var(--panel);
+  border: 2px solid var(--ink);
+  border-radius: 18px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  place-items: center;
+  position: relative;
+}
+
+.eye {
+  width: 20px;
+  height: 20px;
+  background: var(--accent);
+  border-radius: 50%;
+}
+
+.mouth {
+  position: absolute;
+  bottom: 14px;
+  width: 50px;
+  height: 6px;
+  background: var(--ink);
+  border-radius: 999px;
+}
+
+.body {
+  width: 140px;
+  height: 80px;
+  background: var(--panel);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+}
+
+.chatbox {
+  width: min(520px, 92vw);
+  background: var(--panel);
+  border: 2px solid var(--ink);
+  border-radius: 16px;
+  padding: 18px;
+}
+
+.chatbox h1 {
+  margin: 0 0 12px;
+  font-size: 1.4rem;
+}
+
+.chat-window {
+  height: 260px;
+  border: 1px solid #dcdcdc;
+  border-radius: 12px;
+  padding: 12px;
+  overflow-y: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  background: #fafafa;
+}
+
+.bubble {
+  max-width: 85%;
+  padding: 10px 12px;
+  border-radius: 12px;
+  font-size: 0.95rem;
+}
+
+.user {
+  align-self: flex-end;
+  background: var(--accent);
+  color: white;
+}
+
+.bot {
+  align-self: flex-start;
+  background: #e9eef8;
+  color: #1d2b3a;
+}
+
+.chat-form {
+  margin-top: 12px;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 8px;
+}
+
+.chat-form input {
+  padding: 10px 12px;
+  border-radius: 10px;
+  border: 1px solid #d0d0d0;
+}
+
+.chat-form button {
+  padding: 10px 16px;
+  border-radius: 10px;
+  border: none;
+  background: var(--accent);
+  color: white;
+  font-weight: 600;
+  cursor: pointer;
+}
